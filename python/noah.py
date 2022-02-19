@@ -5,18 +5,10 @@ def getCardValue():
   return random.randint(2, 14)
 
 def getCardStr(cardValue):
-  if cardValue < 10:
+  lookup = {10: "T", 11: "J", 12: "Q", 13: "K", 14: "A"}
+  if cardValue not in lookup:
     return str(cardValue)
-  elif cardValue == 10:
-    return "T"
-  elif cardValue == 11:
-    return "J"
-  elif cardValue == 12:
-    return "Q"
-  elif cardValue == 13:
-    return "K"
-  elif cardValue == 14:
-    return "A"
+  return lookup[cardValue]
 
 def getHLGuess():
     while True:
