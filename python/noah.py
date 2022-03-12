@@ -1,5 +1,5 @@
 import random
-print('--- Welcome to High-Low ---\n Start with 100 points. Each round a card will be drawn and shown.\n Select whether you think the 2nd card will be Higher or Lower than the 1st card.\n Then enter the amount you want to bet.If you are right, you win the amount you bet, otherwise you lose.\n Try to make it to 500 points within 10 tries.\n -------------------------')
+# print('--- Welcome to High-Low ---\n Start with 100 points. Each round a card will be drawn and shown.\n Select whether you think the 2nd card will be Higher or Lower than the 1st card.\n Then enter the amount you want to bet.If you are right, you win the amount you bet, otherwise you lose.\n Try to make it to 500 points within 10 tries.\n -------------------------')
 
 def getCardValue():
   return random.randint(2, 14)
@@ -61,5 +61,17 @@ def game():
     rounds += 1
   print(f"Game over, your final score is {ipoints}")
 
+def tic():
+  board = {0: '-',1: '-',2: '-',
+         3: '-',4: '-',5: '-',
+         6: '-',7: '-',8: '-'}
+  count = 1
+  for k,v in board.items():
+    print(v, end="")
+    if count == 3:
+      count = 0
+      print("")
+    count += 1
+
 if __name__ == "__main__":
-  game()
+  tic()
